@@ -1,3 +1,6 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('dashboard', ['ng']);
+    angular
+        .module('dashboard', ['ng', 'ngMaterial']);
+})();
