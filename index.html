@@ -16,6 +16,46 @@
 <body>
     <div ng-controller="DashboardController as dashboard">
 
+        <md-toolbar class="md-tall">
+
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Dashboard</span>
+                </h3>
+                <span flex></span>
+
+                <div class="flex-filters-container">
+                    <div class="element">
+                        <!-- session dropdown menu -->
+                        <md-input-container class="_md-text">
+                            <label>Session:</label>
+                            <md-select ng-model="main.selectedSpSessions" md-on-close="">
+                                <md-optgroup label="spSessions:">
+                                    <md-option ng-value="session" ng-repeat="session in main.spSessions">{{session}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div class="element">
+                        <!-- session dropdown menu -->
+                        <md-input-container>
+                            <label>Session:</label>
+                            <md-select ng-model="main.selectedSpSessions" md-on-close="">
+                                <md-optgroup label="spSessions:">
+                                    <md-option ng-value="session" ng-repeat="session in main.spSessions">{{session}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div class="element">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </md-toolbar>
+
 
         <intensity-chart data="dashboard.intensityChartData" options="dashboard.intensityChartOptions"></intensity-chart>
 
@@ -42,6 +82,7 @@
 
     <!-- local libs -->
     <script src="app.module.js"></script>
+    <script src="data-loader.service.js"></script>
     <script src="dashboard.controller.js"></script>
     <script src="intensity-chart.directive.js"></script>
     <script src="d3-utils.service.js"></script>
